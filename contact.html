@@ -7,7 +7,7 @@
 	<meta name="author" content="Dan Smith">
 	<title>Symbol Design Studio</title>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;900&display=swap" rel="stylesheet">
 	<link href="cover.css" rel="stylesheet">
 </head>
 
@@ -19,32 +19,34 @@
 		</header>
 
 		<main role="main" class="inner cover">
-			<h1 class="cover-heading cover-heading-contact">SYMBOL<br>DESIGN<br>STUDIO</h1>
-			
-			<form id="my-form" action="https://formspree.io/mgenrywl" method="POST" class="form text-left">
+			<div class="cover-heading-container text-left">
+				<h1 class="cover-heading cover-heading-contact">SYMBOL<br>DESIGN<br>STUDIO</h1>
 
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" class="form-control" required />
-				</div>
+				<form id="my-form" action="https://formspree.io/mgenrywl" method="POST" class="form text-left">
 
-				<div class="form-group">
-					<label for="email">Email address</label>
-					<input type="email" name="email" id="email" class="form-control" required/>
-				</div>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" class="form-control" required />
+					</div>
 
-				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea name="message" id="message" class="form-control" required></textarea>
-				</div>
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input type="email" name="email" id="email" class="form-control" required/>
+					</div>
 
-				<input type="text" name="_gotcha" style="display:none" />
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" class="form-control" required></textarea>
+					</div>
 
-				<div class="pt-3 text-center">
-					<button id="my-form-button" class="btn btn-lg btn-secondary">Submit</button>
-					<p id="my-form-status"></p>
-				</div>
-			</form>
+					<input type="text" name="_gotcha" style="display:none" />
+
+					<div class="pt-3">
+						<button id="my-form-button" class="btn btn-lg btn-secondary">Submit</button>
+						<p id="my-form-status"></p>
+					</div>
+				</form>
+			</div>
 		</main>
 
 		<footer class="mastfoot mt-auto">
@@ -54,43 +56,43 @@
 	</div>
 
 	<script>
-    	window.addEventListener("DOMContentLoaded", function() {
+		window.addEventListener("DOMContentLoaded", function() {
 
-	        var form = document.getElementById("my-form");
-	        var button = document.getElementById("my-form-button");
-	        var status = document.getElementById("my-form-status");
+			var form = document.getElementById("my-form");
+			var button = document.getElementById("my-form-button");
+			var status = document.getElementById("my-form-status");
 
-	        function success() {
-	            form.reset();
-	            button.style = "display: none ";
-	            status.innerHTML = "Thanks! We'll be in touch shortly.";
-	        }
+			function success() {
+				form.reset();
+				button.style = "display: none ";
+				status.innerHTML = "Thanks! We'll be in touch shortly.";
+			}
 
-	        function error() {
-	            status.innerHTML = "Oops! There was a problem.";
-	        }
+			function error() {
+				status.innerHTML = "Oops! There was a problem.";
+			}
 
-	        form.addEventListener("submit", function(ev) {
-	            ev.preventDefault();
-	            var data = new FormData(form);
-	            ajax(form.method, form.action, data, success, error);
-	        });
-	    });
+			form.addEventListener("submit", function(ev) {
+				ev.preventDefault();
+				var data = new FormData(form);
+				ajax(form.method, form.action, data, success, error);
+			});
+		});
 
-	    function ajax(method, url, data, success, error) {
-	        var xhr = new XMLHttpRequest();
-	        xhr.open(method, url);
-	        xhr.setRequestHeader("Accept", "application/json");
-	        xhr.onreadystatechange = function() {
-	            if (xhr.readyState !== XMLHttpRequest.DONE) return;
-	            if (xhr.status === 200) {
-	                success(xhr.response, xhr.responseType);
-	            } else {
-	                error(xhr.status, xhr.response, xhr.responseType);
-	            }
-	        };
-	        xhr.send(data);
-	    }
+		function ajax(method, url, data, success, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open(method, url);
+			xhr.setRequestHeader("Accept", "application/json");
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState !== XMLHttpRequest.DONE) return;
+				if (xhr.status === 200) {
+					success(xhr.response, xhr.responseType);
+				} else {
+					error(xhr.status, xhr.response, xhr.responseType);
+				}
+			};
+			xhr.send(data);
+		}
 	</script>
 
 </body>
