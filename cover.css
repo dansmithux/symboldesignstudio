@@ -1,0 +1,100 @@
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: RGB(22, 44, 58);
+  color: RGB(219, 169, 136);
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Nunito', sans-serif;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Globals
+ */
+
+/* Custom default button */
+.btn-secondary {
+  color: RGB(217, 124, 80);
+  border: 2px solid RGB(217, 124, 80);
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: transparent;
+  font-family: 'Nunito', sans-serif;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: RGB(219, 169, 136);
+  border: 2px solid RGB(219, 169, 136);
+  background-color: transparent;
+}
+
+label {
+  margin-bottom: .2rem;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+.cover .cover-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 4em;
+}
+
+@media only screen and (min-width: 768px) {
+  .cover .cover-heading {
+    font-size: 6em;
+  }
+}
+
+.cover .cover-heading.cover-heading-contact {
+  font-size: 4em;
+}
+
+/*
+ * Form
+ */
+.form {
+  /*border: 2px solid #fff;*/
+  padding-top: 24px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+input.form-control,
+textarea.form-control,
+input.form-control:focus
+textarea.form-control:focus {
+  background-color: transparent !important;
+  color: RGB(219, 169, 136) !important;
+  border: 2px solid RGB(219, 169, 136);
+}
+#my-form-status {
+  color: RGB(217, 124, 80);
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+  /*color: RGB(217, 124, 80);*/
+}
