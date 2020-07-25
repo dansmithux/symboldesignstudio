@@ -90,17 +90,23 @@ label {
   margin: 0 auto;
 }
 
-input.form-control,
-textarea.form-control,
-input.form-control:focus
-textarea.form-control:focus {
-  background-color: transparent !important;
-  color: rgb(219, 169, 136) !important;
-  border: 2px solid #e6be8a;
+
+.form-control {
+  background-color: transparent;
+  color: #e6be8a;
+  transition: all .2s ease-in-out;
   border-radius: 0;
+  border: 2px solid #e6be8a;
+  font-size: 1.4em;
+  outline: none;
+}
+.form-control:focus {
+  background-color: #e6be8a;
+  box-shadow: 0 0 5px rgba(230,190,138, 0.65);
+  color: #111;
 }
 #my-form-status {
-  color: rgb(217, 124, 80);
+  color: #e6be8a;
 }
 
 
